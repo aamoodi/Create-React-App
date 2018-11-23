@@ -25,16 +25,19 @@ class App extends React.Component {
       this.setState({currentQ: currentQ});
   }
   stateChange(){
+
     if(this.state.answerVisibility){
       this.state.answerVisibility = false;
     }else{
       this.state.answerVisibility = true;
     }
+
   }
 
     render(){
       let len =this.state.currentPool.length;
       let quest = this.state.currentQ+1;
+      let visibility = this.state.answerVisibility;
       let listItems = QandA.map(function(Qdetails, i){
         return <li> {Qdetails.question}</li>;
       });
@@ -57,11 +60,11 @@ return (
 
 
     <ControlPanel currentQ ={quest} numberOfQuestion = {len}nextButton = {this.nextQ.bind(this)}
-    prevButton = {this.prevQ.bind(this)} />,
+    prevButton = {this.prevQ.bind(this)} visibleButton = {this.stateChange.bind(this)} />,
     <br/><br/><br/>
     {listItems[this.state.currentQ]}
     <br/><br/><br/>
-    <QandAPanel /></div>
+    <QandAPanel currentQ ={quest}showAnswer = {visibility}/></div>
 )}
 }
 

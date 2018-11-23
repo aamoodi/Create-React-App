@@ -8,7 +8,8 @@ import QandA from './QandA.json';
 class QandAPanel extends React.Component {
   constructor(props) {
       super(props);
-      this.state = {answerVisible:true}
+      this.answerVisible = this.props.showAnswer;
+
   }
   render() {
     let listItems = QandA.map(function(Qdetails, i){
@@ -20,8 +21,8 @@ class QandAPanel extends React.Component {
 
     let contents = <div>
 
-       {listItems[0]}
-       {listItems1[0]}
+
+       {listItems1[this.props.currentQ-1]}
 
    </div>;
    let content = <div>
@@ -30,10 +31,12 @@ class QandAPanel extends React.Component {
 
 
   </div>;
-   if(this.state.answerVisible){
-    return contents}
+   if(this.props.showAnswer){
+
+    return contents
+}
     else{
-      return content;
+      return null;
     }
   }
 }
