@@ -5,6 +5,7 @@ import './index.css';
 import {QandAPanel} from './QandAPanel';
 import {ControlPanel} from './ControlPanel';
 import QandA from './QandA.json';
+import {QuestionCreator} from './QuestionCreator'
 
 class App extends React.Component {
 
@@ -26,11 +27,10 @@ class App extends React.Component {
   }
   stateChange(){
 
-    if(this.state.answerVisibility){
-      this.state.answerVisibility = false;
-    }else{
-      this.state.answerVisibility = true;
-    }
+this.setState({
+      answerVisibility: !this.state.answerVisibility
+    })
+
 
   }
 
@@ -58,13 +58,15 @@ class App extends React.Component {
 return (
   <div>
 
+  <br/>
 
     <ControlPanel currentQ ={quest} numberOfQuestion = {len}nextButton = {this.nextQ.bind(this)}
     prevButton = {this.prevQ.bind(this)} visibleButton = {this.stateChange.bind(this)} />,
-    <br/><br/><br/>
-    {listItems[this.state.currentQ]}
-    <br/><br/><br/>
-    <QandAPanel currentQ ={quest}showAnswer = {visibility}/></div>
+    <br/>
+    <br/>
+    <QandAPanel currentQ ={quest}showAnswer = {visibility}/>
+    <QuestionCreator />
+    </div>
 )}
 }
 
