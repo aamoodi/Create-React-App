@@ -11,6 +11,7 @@ render() {
             <button onClick={this.props.nextButton}>Next Question</button>
             <button onClick={this.props.prevButton}>Previous Question</button>
             <button onClick={this.props.visibleButton}>Show Answer</button>
+            <button onClick={this.props.vButton}>Hide Answer</button>
             <p> Question {this.props.currentQ} of {this.props.numberOfQuestion}</p>
         </div>;
         return buttonBar
