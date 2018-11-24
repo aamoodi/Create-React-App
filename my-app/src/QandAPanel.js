@@ -21,7 +21,6 @@ class QandAPanel extends React.Component {
        {listItems1[this.props.currentQ-1]}
    </div>;
    let content = <div>
-
       {listItems[this.props.currentQ-1]}
   </div>;
    if(this.props.showAnswer){
