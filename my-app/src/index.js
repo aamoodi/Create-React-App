@@ -73,7 +73,8 @@ return (
     <ControlPanel currentQ ={quest} numberOfQuestion = {len} nextButton = {this.nextQ.bind(this)}
     prevButton = {this.prevQ.bind(this)} visibleButton = {this.stateChange.bind(this)}
     vButton = {this.sChange.bind(this)} compButton = {this.compState.bind(this)}
-    vcompButton = {this.compChange.bind(this)} addQuest = {this.addQ.bind(this)} />,
+    vcompButton = {this.compChange.bind(this)} addQuest = {this.addQ.bind(this)}
+    removeQuest = {this.removeQ.bind(this)}/>,
     <br/>
     <br/>
     <QandAPanel currentQ = {quest} showAnswer = {visibility}/>

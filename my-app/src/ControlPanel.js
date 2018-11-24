@@ -14,7 +14,7 @@ render() {
             <button onClick={this.props.vButton}>Hide Answer</button>
             <button onClick={this.props.compButton}>Show QuestionCreator</button>
             <button onClick={this.props.vcompButton}>Hide QuestionCreator</button>
-            <button onClick={this.props.addQuest}>Remove Question</button>
+            <button onClick={this.props.removeQuest}>Remove Question</button>
             <p> Question {this.props.currentQ} of {this.props.numberOfQuestion}</p>
         </div>;
         return buttonBar
